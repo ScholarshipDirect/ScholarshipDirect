@@ -5,8 +5,8 @@ Welcome to **ScholarshipDirect**, a professional digital directory designed to p
 ## 🚀 Project Goal
 Finding the right government link can be difficult due to many unofficial and misleading websites. This project aims to simplify the process by providing:
 * **Direct Links:** No middle pages, just direct official portal links.
-* **State-wise Organization:** Separate dedicated pages for all 29+ Indian States.
-* **Status Tracking:** Quick links to check scholarship status for the 2026-27 session.
+* **State-wise Organization:** Separate dedicated pages for all 20+ Indian States.
+* **Status Tracking:** Quick links to check scholarship status for the 2025-26 session.
 
 ## 🗺️ Coverage (29 States)
 This portal covers scholarship links for all major states including:
