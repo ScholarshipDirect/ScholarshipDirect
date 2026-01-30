@@ -30,6 +30,14 @@
         .state-card { background: white; padding: 20px; border-radius: 12px; text-align: center; transition: 0.3s; border: 1px solid #eee; text-decoration: none; color: #333; font-weight: 500; display: flex; align-items: center; justify-content: center; min-height: 80px; }
         .state-card:hover { transform: translateY(-5px); border-color: #0056b3; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: #0056b3; }
 
+        <script>
+    function toggleMenu() {
+        var links = document.getElementById("navLinks");
+        links.classList.toggle("active");
+    }
+</script>
+
+
         /* Footer */
         footer { background: #343a40; color: white; padding: 30px 20px; text-align: center; margin-top: 50px; }
         .footer-links a { color: #ffc107; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
@@ -58,18 +66,22 @@
     </style>
 </head>
 <body>
-
-    <nav>
-    <h1>🎓 ScholarshipDirect</h1>
-    <div class="menu-toggle" onclick="toggleMenu()" style="cursor:pointer; color:white; font-size:24px; padding-right:15px;">
-        ☰
-    </div>
+<nav>
+    <div class="logo">🎓 ScholarshipDirect</div>
     
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
     <div class="nav-links" id="navLinks">
         <a href="index.html">🏠 Home</a>
         <a href="#">📝 All States Portal</a>
-        </div>
+        <a href="#">📂 Required Documents</a>
+        <a href="#">🔔 Latest News</a>
+        <a href="#">🔍 Check PFMS Status</a>
+        <a href="https://t.me/YourChannel" style="background: #0088cc;">📱 Join Telegram</a>
+        <a href="#">📞 Contact Us</a>
+    </div>
 </nav>
+
 
 
     <div class="hero">
