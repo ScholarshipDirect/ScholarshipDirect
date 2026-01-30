@@ -8,7 +8,7 @@ Finding the right government link can be difficult due to many unofficial and mi
 * **State-wise Organization:** Separate dedicated pages for all 20+ Indian States.
 * **Status Tracking:** Quick links to check scholarship status for the 2025-26 session.
 
-## 🗺️ Coverage (29 States)
+## 🗺️ Coverage (20+ States)
 This portal covers scholarship links for all major states including:
 * **Uttar Pradesh (UP Scholarship)**
 * **Bihar (Post-Matric Scholarship)**
