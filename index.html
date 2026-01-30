@@ -33,6 +33,28 @@
         /* Footer */
         footer { background: #343a40; color: white; padding: 30px 20px; text-align: center; margin-top: 50px; }
         .footer-links a { color: #ffc107; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
+        .nav-links {
+    display: none; /* Mobile par click karne par hi dikhega */
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.nav-links a {
+    color: #333 !important;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.nav-links a:last-child { border-bottom: none; }
+
     </style>
 </head>
 <body>
