@@ -1,102 +1,102 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScholarshipDirect | Indian State Scholarship Portals 2026</title>
-    <meta name="description" content="Direct links to check scholarship status for all Indian states.">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>ScholarshipDirect | Check All India Scholarship Status 2026</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f8f9fa; color: #333; }
+        /* General Setup */
+        :root { --primary-blue: #0d1b44; --accent-red: #d90429; --light-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); line-height: 1.6; }
+        * { box-sizing: border-box; }
+
+        /* Header & Navbar */
+        header { background: #004a99; color: white; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 22px; font-weight: bold; }
+        .menu-btn { font-size: 26px; cursor: pointer; }
+
+        /* Professional Sidebar */
+        .sidebar { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: var(--primary-blue); overflow-x: hidden; transition: 0.4s; padding-top: 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.5); }
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: white; }
+        .sidebar a { padding: 15px 25px; text-decoration: none; font-size: 16px; color: #ccc; display: block; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sidebar a:hover { color: white; background: #1a2a5a; }
+        .close-btn { font-size: 30px; cursor: pointer; }
+
+        /* Overlay */
+        .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1500; }
+
+        /* Hero Banner */
+        .hero { background: linear-gradient(45deg, #004a99, #0072ff); color: white; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 32px; margin: 0; }
+        .hero p { font-size: 18px; margin-top: 10px; opacity: 0.9; }
+
+        /* Container & Grid */
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .section-title { color: var(--primary-blue); border-left: 6px solid var(--accent-red); padding-left: 15px; margin: 40px 0 20px; font-size: 24px; }
         
-        /* Navigation Bar */
-        nav { background: #004085; padding: 15px 5px; color: white; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav h1 { font-size: 1.5rem; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .state-card { background: white; padding: 25px; text-align: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; font-weight: bold; color: #333; }
+        .state-card:hover { transform: translateY(-5px); border-color: #004a99; color: #004a99; }
 
-        /* Hero Section */
-        .hero { background: #0056b3; color: white; padding: 40px 20px; text-align: center; }
-        .hero p { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; }
+        /* Content Blocks */
+        .info-card { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .info-card h3 { color: #004a99; margin-top: 0; }
+        .step-list { padding-left: 20px; }
+        .step-list li { margin-bottom: 15px; }
 
-        /* Search Section */
-        .search-container { margin: -25px auto 30px; width: 90%; max-width: 500px; }
-        .search-container input { width: 100%; padding: 15px; border-radius: 30px; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); outline: none; }
+        /* Adsterra Spaces */
+        .ad-space { background: #eee; border: 1px dashed #bbb; padding: 20px; text-align: center; margin: 30px 0; border-radius: 8px; font-size: 12px; color: #888; }
 
-        /* State Grid */
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-        .section-title { text-align: left; margin: 20px 10px; font-weight: 600; color: #004085; border-left: 5px solid #ffc107; padding-left: 10px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 10px; }
-        .state-card { background: white; padding: 20px; border-radius: 12px; text-align: center; transition: 0.3s; border: 1px solid #eee; text-decoration: none; color: #333; font-weight: 500; display: flex; align-items: center; justify-content: center; min-height: 80px; }
-        .state-card:hover { transform: translateY(-5px); border-color: #0056b3; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: #0056b3; }
-
-        <script>
-    function toggleMenu() {
-        var links = document.getElementById("navLinks");
-        links.classList.toggle("active");
-    }
-</script>
-
+        /* Table Style */
+        .doc-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+        .doc-table th, .doc-table td { padding: 15px; border: 1px solid #ddd; text-align: left; }
+        .doc-table th { background: #004a99; color: white; }
 
         /* Footer */
-        footer { background: #343a40; color: white; padding: 30px 20px; text-align: center; margin-top: 50px; }
-        .footer-links a { color: #ffc107; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
-        .nav-links {
-    display: none; /* Mobile par click karne par hi dikhega */
-    flex-direction: column;
-    background: #ffffff;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 200px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.nav-links a {
-    color: #333 !important;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    font-size: 15px;
-}
-
-.nav-links a:last-child { border-bottom: none; }
-
+        footer { background: #111; color: #aaa; padding: 50px 20px; text-align: center; margin-top: 60px; }
+        footer a { color: white; margin: 0 10px; font-size: 14px; }
     </style>
 </head>
 <body>
-<nav>
-    <div class="logo">🎓 ScholarshipDirect</div>
-    
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">🏠 Home</a>
-        <a href="#">📝 All States Portal</a>
-        <a href="#">📂 Required Documents</a>
-        <a href="#">🔔 Latest News</a>
-        <a href="#">🔍 Check PFMS Status</a>
-        <a href="https://t.me/YourChannel" style="background: #0088cc;">📱 Join Telegram</a>
-        <a href="#">📞 Contact Us</a>
+<div id="mySidebar" class="sidebar">
+    <div class="sidebar-header">
+        <span class="close-btn" onclick="closeNav()">✕</span>
+        <span>MENU</span>
+        <span>🔍</span>
     </div>
-</nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="#">📋 Full State List</a>
+    <a href="#">📝 UP Scholarship Status</a>
+    <a href="#">📙 Bihar Post-Matric</a>
+    <a href="#">💳 PFMS Payment Track</a>
+    <a href="#">📂 Required Documents</a>
+    <a href="#">📅 Latest Dates 2026</a>
+    <a href="#">📰 Education News</a>
+    <a href="#">📞 Contact Us</a>
+    <a href="#" style="background: #0088cc; color: white; text-align: center; margin: 20px; border-radius: 8px; font-weight: bold;">JOIN TELEGRAM</a>
+</div>
 
+<div id="overlay" class="overlay" onclick="closeNav()"></div>
 
+<header>
+    <div class="menu-btn" onclick="openNav()">☰</div>
+    <div class="logo">SCHOLARSHIP DIRECT</div>
+    <div style="font-size: 20px;">🔍</div>
+</header>
 
-    <div class="hero">
-        <h2>Scholarship Portals of All Indian States</h2>
-        <p>Direct links, status check and application portals all in one place.</p>
-    </div>
+<div class="hero">
+    <h1>All India Scholarship Status 2025-26</h1>
+    <p>Direct Access to State & Central Scholarship Portals</p>
+</div>
 
-    <div class="search-container">
-        <input type="text" placeholder="Apna State Search Karein (e.g. UP, Bihar)...">
-    </div>
+<div class="container">
 
-    <div class="container">
-        <h3 class="section-title">Select Your State</h3>
-        <div class="grid">
-            <a href="up.html" class="state-card">Uttar Pradesh</a>
+    <div class="ad-space">ADSTERRA TOP BANNER (728x90)</div>
+
+    <h2 class="section-title">Select Your State</h2>
+    <div class="grid">
+        <a href="up.html" class="state-card">Uttar Pradesh</a>
             <a href="bihar.html" class="state-card">Bihar</a>
             <a href="mp.html" class="state-card">Madhya Pradesh</a>
             <a href="haryana.html" class="state-card">Haryana</a>
@@ -113,82 +113,79 @@
             <a href="kerala.html" class="state-card">Kerals</a>
             <a href="chhattisgarh.html" class="state-card">Chhattisgarh</a>
             <a href="assam.html" class="state-card">Assam</a>
-            </div>
     </div>
-    <div style="max-width: 950px; margin: 30px auto; padding: 30px; background: #ffffff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #444;">
-    
-    <h2 style="color: #1e3799; text-align: center; font-size: 28px; margin-bottom: 10px;">UP Scholarship Status 2025-2026: A Complete Guide</h2>
-    <p style="text-align: center; color: #777; margin-bottom: 30px;">Track your application and payment status online with ease.</p>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid #1e3799;">
-            <h3 style="color: #1e3799;">How to Check Status?</h3>
-            <ol style="padding-left: 20px; font-size: 15px; line-height: 1.8;">
-                <li>Visit the official <b>UP Scholarship Portal</b>.</li>
-                <li>Navigate to the "Status" or "Student Login" section.</li>
-                <li>Enter your <b>Registration Number</b> and Date of Birth.</li>
-                <li>Fill in the Captcha and click on the <b>Submit</b> button.</li>
-                <li>Your current verification status will appear on the screen.</li>
-            </ol>
+    <div class="ad-space">ADSTERRA NATIVE AD (Grid Style)</div>
+
+    <h2 class="section-title">How to Check Status Online?</h2>
+    <div class="info-card">
+        <h3>Follow These Detailed Steps:</h3>
+        <ol class="step-list">
+            <li><strong>Identify Your Portal:</strong> First, select your home state from the list above to go to the specific scholarship portal.</li>
+            <li><strong>Login Process:</strong> Click on the 'Student Login' button. You will need your Registration ID and Password.</li>
+            <li><strong>Verification:</strong> Solve the captcha security code carefully. If you forgot your password, use the 'Forgot Password' link.</li>
+            <li><strong>Dashboard:</strong> Once logged in, look for the 'Application Status' or 'Check Current Status' link in the menu.</li>
+            <li><strong>Print Report:</strong> It is recommended to take a screenshot or print your status for future reference in college.</li>
+        </ol>
+    </div>
+
+    <h2 class="section-title">Documents Required (2025-26)</h2>
+    <div class="info-card">
+        <table class="doc-table">
+            <tr><th>Document Name</th><th>Importance</th></tr>
+            <tr><td>Aadhaar Card</td><td>Must be linked with Mobile Number & Bank</td></tr>
+            <tr><td>Income Certificate</td><td>Issued after April 2025 for this session</td></tr>
+            <tr><td>Caste Certificate</td><td>Required for SC/ST/OBC categories</td></tr>
+            <tr><td>Fee Receipt</td><td>Original receipt provided by your College</td></tr>
+            <tr><td>Bank Passbook</td><td>Account must have NPCI/DBT enabled</td></tr>
+            <tr><td>Previous Marksheet</td><td>To prove eligibility (Minimum 50-60%)</td></tr>
+        </table>
+    </div>
+
+    <div class="ad-space">ADSTERRA LARGE RECTANGLE (300x250)</div>
+
+    <h2 class="section-title">Important FAQs (Help Desk)</h2>
+    <div class="info-card">
+        <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <strong>Q1: Why is my status showing 'Pending at District Committee'?</strong>
+            <p>Ans: This is a normal stage where the District Social Welfare Department verifies your documents. It usually takes 15-30 days.</p>
         </div>
-
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid #eb2f06;">
-            <h3 style="color: #eb2f06;">Key Documents Needed</h3>
-            <ul style="padding-left: 20px; font-size: 15px; line-height: 1.8;">
-                <li>Aadhaar Card (Linked with Mobile)</li>
-                <li>Income & Caste Certificate</li>
-                <li>Previous Year Marksheet</li>
-                <li>Bank Passbook (NPCI Seeded)</li>
-                <li>Fee Receipt & Bonafide Certificate</li>
-            </ul>
+        <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <strong>Q2: My Bank status shows 'Rejected by Bank', what to do?</strong>
+            <p>Ans: Immediately visit your bank branch and ask them to complete your KYC and link your Aadhaar with the NPCI mapper for DBT payments.</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <strong>Q3: Can I apply for two scholarships at once?</strong>
+            <p>Ans: No, as per government rules, a student can avail only one scholarship (either State or Central) in one academic year.</p>
         </div>
     </div>
 
-    <div style="margin-top: 25px; padding: 15px; background: #e3f2fd; border-radius: 8px; font-size: 15px;">
-        <strong>Pro Tip:</strong> Ensure your Bank Account is mapped with <b>NPCI</b>. If not, your payment might get stuck even after verification.
+    <h2 class="section-title">About Scholarship Direct Portal</h2>
+    <div class="info-card">
+        <p>Scholarship Direct is an independent educational news portal dedicated to helping students across India. We provide the latest updates on UP Scholarship, Bihar Post-Matric, NSP (National Scholarship Portal), and various other state-funded schemes. Our mission is to simplify the complex process of tracking payments via PFMS and official portals.</p>
+        <p>We monitor the official websites 24/7 to bring you the fastest notifications regarding correction dates, renewal processes, and merit list announcements. Stay connected with us for all your educational funding needs.</p>
     </div>
-
-        <div style="max-width: 950px; margin: 30px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-    <h2 style="color: #1e3799; text-align: center; margin-bottom: 30px;">Frequently Asked Questions (FAQs)</h2>
-
-    <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
-        <p style="font-weight: bold; font-size: 17px; margin-bottom: 8px;">1. When will the UP Scholarship 2026 payment be disbursed?</p>
-        <p style="color: #555; font-size: 15px;">The scholarship amount is usually transferred to students' bank accounts between February and March 2026 via DBT (Direct Benefit Transfer).</p>
-    </div>
-
-    <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
-        <p style="font-weight: bold; font-size: 17px; margin-bottom: 8px;">2. What does "Pending at District Scholarship Committee" mean?</p>
-        <p style="color: #555; font-size: 15px;">It means your application has been verified at the college level and is currently awaiting final approval from the District Social Welfare Department.</p>
-    </div>
-
-    <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
-        <p style="font-weight: bold; font-size: 17px; margin-bottom: 8px;">3. Can I edit my form after submission?</p>
-        <p style="color: #555; font-size: 15px;">Yes, you can edit your form only during the "Correction Window" period announced by the department. Keep checking this portal for the dates.</p>
-    </div>
-
-    <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
-        <p style="font-weight: bold; font-size: 17px; margin-bottom: 8px;">4. Why is my status showing 'Rejected by Bank'?</p>
-        <p style="color: #555; font-size: 15px;">This happens if your Aadhaar is not linked to your bank account or if your KYC is incomplete. Visit your bank immediately to resolve this.</p>
-    </div>
-
-    <div style="padding: 15px 0;">
-        <p style="font-weight: bold; font-size: 17px; margin-bottom: 8px;">5. How to track scholarship payment via PFMS?</p>
-        <p style="color: #555; font-size: 15px;">Go to the PFMS portal, enter your Bank Name and Account Number to track the real-time status of your scholarship credit.</p>
-    </div>
-</div>
 
 </div>
 
+<footer>
+    <div style="margin-bottom: 20px;">
+        <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a> | <a href="#">Contact</a>
+    </div>
+    <p>&copy; 2026 ScholarshipDirect.github.io | All Rights Reserved.</p>
+    <p style="font-size: 11px; margin-top: 10px;">Disclaimer: This is not an official government website. We provide information for educational purposes only.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2026 ScholarshipDirect | Designed for Students</p>
-        <div class="footer-links">
-            <a href="about.html">About Us</a> | 
-            <a href="contact.html">Contact</a> | 
-            <a href="privacy.html">Privacy Policy</a>
-        </div>
-    </footer>
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "280px";
+        document.getElementById("overlay").style.display = "block";
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
-
