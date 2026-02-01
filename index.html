@@ -56,6 +56,16 @@
         footer { background: #111; color: #aaa; padding: 50px 20px; text-align: center; margin-top: 60px; }
         footer a { color: white; margin: 0 10px; font-size: 14px; }
     </style>
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "a5b1cc83-2e95-4ba1-ad20-d414da1534f7",
+    });
+  });
+</script>
 </head>
 <body>
 
