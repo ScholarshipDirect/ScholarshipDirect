@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Unimportant pages to hide from search (Optional)
+Disallow: /private/
+Disallow: /temp/
+
+# Link to your Sitemap (Replace with your actual link)
+Sidemap:https://scholarshipdirect.github.io/ScholarshipDirect/sitemap.xml
