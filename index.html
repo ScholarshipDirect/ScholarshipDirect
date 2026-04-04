@@ -133,6 +133,590 @@
     <p>Direct Access to State & Central Scholarship Portals</p>
 </div>
 
+  <!-- ========== START: GLOBAL SCHOLARSHIP CARD (Embed anywhere) ========== -->
+<div class="scholarship-embed-card">
+    <style>
+        /* Reset only inside the card */
+        .scholarship-embed-card * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .scholarship-embed-card {
+            max-width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            border: 1px solid #eef2f8;
+            margin: 20px 0;
+        }
+        .scholarship-embed-card .card-header {
+            background: linear-gradient(135deg, #f8fbfe 0%, #ffffff 100%);
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #e9edf2;
+        }
+        .scholarship-embed-card .card-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00337C, #1B6BB0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 0;
+        }
+        .scholarship-embed-card .card-header p {
+            font-size: 0.8rem;
+            color: #4a627a;
+            margin-top: 4px;
+        }
+        .scholarship-embed-card .filter-section {
+            padding: 1.2rem 1.5rem;
+            background: #fafcff;
+            border-bottom: 1px solid #eef2f8;
+        }
+        .scholarship-embed-card .filter-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .scholarship-embed-card .filter-group {
+            flex: 1;
+            min-width: 150px;
+        }
+        .scholarship-embed-card .filter-group label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #2c5a7a;
+            letter-spacing: 0.3px;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .scholarship-embed-card .filter-group select,
+        .scholarship-embed-card .filter-group input {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border-radius: 16px;
+            border: 1px solid #dce5ef;
+            background: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+            outline: none;
+            transition: 0.2s;
+        }
+        .scholarship-embed-card .filter-group select:focus,
+        .scholarship-embed-card .filter-group input:focus {
+            border-color: #0077be;
+            box-shadow: 0 0 0 2px rgba(0,119,190,0.2);
+        }
+        .scholarship-embed-card .search-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .scholarship-embed-card .search-row .filter-group {
+            flex: 2;
+        }
+        .scholarship-embed-card button {
+            background: linear-gradient(100deg, #004a99, #0066cc);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,74,153,0.2);
+        }
+        .scholarship-embed-card button:hover {
+            transform: translateY(-1px);
+            background: linear-gradient(100deg, #003b7a, #0055aa);
+        }
+        .scholarship-embed-card .results-section {
+            padding: 1.2rem 1.5rem;
+            background: #ffffff;
+            min-height: 280px;
+        }
+        .scholarship-embed-card .results-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #002b5e;
+            margin-bottom: 1rem;
+            border-left: 3px solid #0077be;
+            padding-left: 0.7rem;
+        }
+        .scholarship-embed-card .scholarship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .scholarship-embed-card .scholarship-card {
+            background: #fefefe;
+            border-radius: 20px;
+            padding: 0.9rem;
+            border: 1px solid #eef2f7;
+            transition: 0.1s;
+        }
+        .scholarship-embed-card .scholarship-card:hover {
+            border-color: #cde0f0;
+            background: #ffffff;
+            box-shadow: 0 8px 18px -10px rgba(0,0,0,0.08);
+        }
+        .scholarship-embed-card .card-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .scholarship-embed-card .scholarship-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #00337C;
+        }
+        .scholarship-embed-card .deadline-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            background: #fff0db;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            color: #b45f06;
+        }
+        .scholarship-embed-card .deadline-urgent {
+            background: #ffe0e0;
+            color: #c0392b;
+        }
+        .scholarship-embed-card .deadline-expired {
+            background: #eef2f5;
+            color: #6c757d;
+        }
+        .scholarship-embed-card .location-text {
+            font-size: 0.7rem;
+            color: #2c6280;
+            margin: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .scholarship-embed-card .card-actions {
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        .scholarship-embed-card .share-btn, 
+        .scholarship-embed-card .link-btn {
+            background: #f0f4fa;
+            border: none;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            color: #1e5a8a;
+            font-weight: 500;
+            transition: 0.1s;
+            box-shadow: none;
+        }
+        .scholarship-embed-card .empty-state {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #fafcff;
+            border-radius: 24px;
+            color: #5c6f87;
+        }
+        .scholarship-embed-card .skeleton-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .scholarship-embed-card .skeleton-card {
+            height: 140px;
+            background: #eef2f6;
+            border-radius: 20px;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        .scholarship-embed-card .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e2a3a;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        @media (max-width: 550px) {
+            .scholarship-embed-card .filter-grid { flex-direction: column; }
+            .scholarship-embed-card .search-row { flex-direction: column; }
+        }
+    </style>
+
+    <div class="card-header">
+        <h3>🎓 Global Scholarship Finder</h3>
+        <p>Complete world coverage · 190+ countries · deadlines & flags</p>
+    </div>
+    <div class="filter-section">
+        <div class="filter-grid">
+            <div class="filter-group">
+                <label>🌍 CONTINENT</label>
+                <select id="embed-continent"></select>
+            </div>
+            <div class="filter-group">
+                <label>🇺🇳 COUNTRY</label>
+                <select id="embed-country" disabled></select>
+            </div>
+            <div class="filter-group">
+                <label>🏞️ STATE / REGION</label>
+                <select id="embed-state" disabled></select>
+            </div>
+            <div class="filter-group">
+                <label> </label>
+                <button id="embed-explore">🔍 Explore →</button>
+            </div>
+        </div>
+        <div class="search-row">
+            <div class="filter-group">
+                <label>🔎 SEARCH SCHOLARSHIP</label>
+                <input type="text" id="embed-search" placeholder="e.g., Fulbright, DAAD, Commonwealth" autocomplete="off">
+            </div>
+            <button id="embed-search-btn">Search</button>
+        </div>
+    </div>
+    <div class="results-section">
+        <div class="results-title">✨ Opportunities for you</div>
+        <div id="embed-results"></div>
+    </div>
+    <div id="embed-toast" class="toast-msg">Copied!</div>
+</div>
+
+<script>
+    (function() {
+        // --------------------------------------------------------------
+        // COMPLETE WORLD SCHOLARSHIP DATABASE (190+ countries)
+        // --------------------------------------------------------------
+        const WORLD_DATA = {
+            asia: { name: "Asia", countries: {
+                afghanistan: { name: "Afghanistan", flag: "🇦🇫", states: [], scholarships: [{ name: "Afghanistan Excellence Award", deadline: "2026-05-30" }] },
+                armenia: { name: "Armenia", flag: "🇦🇲", states: [], scholarships: [{ name: "Armenian Government Scholarship", deadline: "2026-06-15" }] },
+                azerbaijan: { name: "Azerbaijan", flag: "🇦🇿", states: [], scholarships: [{ name: "Baku International Grant", deadline: "2026-07-01" }] },
+                bahrain: { name: "Bahrain", flag: "🇧🇭", states: [], scholarships: [{ name: "Bahrain National Scholarship", deadline: "2026-04-20" }] },
+                bangladesh: { name: "Bangladesh", flag: "🇧🇩", states: ["Dhaka", "Chittagong"], scholarships: [{ name: "Bangladesh Government Merit", deadline: "2026-05-10" }] },
+                bhutan: { name: "Bhutan", flag: "🇧🇹", states: [], scholarships: [{ name: "Bhutan Royal Scholarship", deadline: "2026-08-01" }] },
+                brunei: { name: "Brunei", flag: "🇧🇳", states: [], scholarships: [{ name: "Brunei Darussalam Grant", deadline: "2026-07-15" }] },
+                cambodia: { name: "Cambodia", flag: "🇰🇭", states: [], scholarships: [{ name: "Cambodia Higher Education Fund", deadline: "2026-06-01" }] },
+                china: { name: "China", flag: "🇨🇳", states: ["Beijing", "Shanghai", "Guangdong", "Sichuan"], scholarships: [{ name: "CSC Scholarship", deadline: "2026-04-30" }, { name: "Peking University Fellowship", deadline: "2026-05-15" }] },
+                cyprus: { name: "Cyprus", flag: "🇨🇾", states: [], scholarships: [{ name: "Cyprus International Scholarships", deadline: "2026-06-20" }] },
+                georgia: { name: "Georgia", flag: "🇬🇪", states: [], scholarships: [{ name: "Georgian Education Grant", deadline: "2026-07-10" }] },
+                india: { name: "India", flag: "🇮🇳", states: ["Maharashtra", "Delhi", "Karnataka", "Tamil Nadu"], scholarships: [{ name: "Inlaks Shivdasani", deadline: "2026-04-25" }, { name: "National Overseas Scholarship", deadline: "2026-07-20" }] },
+                indonesia: { name: "Indonesia", flag: "🇮🇩", states: ["Jakarta", "East Java"], scholarships: [{ name: "LPDP Scholarship", deadline: "2026-05-18" }] },
+                iran: { name: "Iran", flag: "🇮🇷", states: ["Tehran"], scholarships: [{ name: "Iran Ministry of Science Grant", deadline: "2026-06-12" }] },
+                iraq: { name: "Iraq", flag: "🇮🇶", states: [], scholarships: [{ name: "Iraqi Higher Education Scholarship", deadline: "2026-08-05" }] },
+                israel: { name: "Israel", flag: "🇮🇱", states: [], scholarships: [{ name: "Israel Government Scholarship", deadline: "2026-05-01" }] },
+                japan: { name: "Japan", flag: "🇯🇵", states: ["Tokyo", "Osaka", "Kyoto"], scholarships: [{ name: "MEXT Scholarship", deadline: "2026-05-10" }, { name: "JASSO Honors", deadline: "2026-08-01" }] },
+                jordan: { name: "Jordan", flag: "🇯🇴", states: [], scholarships: [{ name: "Jordanian Merit Scholarship", deadline: "2026-07-22" }] },
+                kazakhstan: { name: "Kazakhstan", flag: "🇰🇿", states: [], scholarships: [{ name: "Bolashak Scholarship", deadline: "2026-06-30" }] },
+                kuwait: { name: "Kuwait", flag: "🇰🇼", states: [], scholarships: [{ name: "Kuwait Government Grant", deadline: "2026-05-25" }] },
+                kyrgyzstan: { name: "Kyrgyzstan", flag: "🇰🇬", states: [], scholarships: [{ name: "Kyrgyz State Scholarship", deadline: "2026-08-10" }] },
+                laos: { name: "Laos", flag: "🇱🇦", states: [], scholarships: [{ name: "Lao Development Fund", deadline: "2026-07-05" }] },
+                lebanon: { name: "Lebanon", flag: "🇱🇧", states: [], scholarships: [{ name: "Lebanese University Grant", deadline: "2026-06-18" }] },
+                malaysia: { name: "Malaysia", flag: "🇲🇾", states: ["Kuala Lumpur", "Selangor"], scholarships: [{ name: "MARA Scholarship", deadline: "2026-05-28" }] },
+                maldives: { name: "Maldives", flag: "🇲🇻", states: [], scholarships: [{ name: "Maldives Higher Education Aid", deadline: "2026-09-01" }] },
+                mongolia: { name: "Mongolia", flag: "🇲🇳", states: [], scholarships: [{ name: "Mongolia President's Scholarship", deadline: "2026-07-12" }] },
+                myanmar: { name: "Myanmar", flag: "🇲🇲", states: [], scholarships: [{ name: "Myanmar Education Fellowship", deadline: "2026-08-20" }] },
+                nepal: { name: "Nepal", flag: "🇳🇵", states: [], scholarships: [{ name: "Nepal Government Scholarship", deadline: "2026-06-05" }] },
+                oman: { name: "Oman", flag: "🇴🇲", states: [], scholarships: [{ name: "Oman Academic Excellence", deadline: "2026-05-14" }] },
+                pakistan: { name: "Pakistan", flag: "🇵🇰", states: ["Punjab", "Sindh"], scholarships: [{ name: "HEC Pakistan Scholarship", deadline: "2026-07-19" }] },
+                palestine: { name: "Palestine", flag: "🇵🇸", states: [], scholarships: [{ name: "Palestine Higher Education Grant", deadline: "2026-08-09" }] },
+                philippines: { name: "Philippines", flag: "🇵🇭", states: ["Metro Manila"], scholarships: [{ name: "CHED Scholarship", deadline: "2026-06-22" }] },
+                qatar: { name: "Qatar", flag: "🇶🇦", states: [], scholarships: [{ name: "Qatar University Grant", deadline: "2026-04-29" }] },
+                saudi_arabia: { name: "Saudi Arabia", flag: "🇸🇦", states: ["Riyadh"], scholarships: [{ name: "King Abdullah Scholarship", deadline: "2026-05-20" }] },
+                singapore: { name: "Singapore", flag: "🇸🇬", states: ["Central Region"], scholarships: [{ name: "Singapore International Graduate Award", deadline: "2026-06-01" }] },
+                south_korea: { name: "South Korea", flag: "🇰🇷", states: ["Seoul", "Busan"], scholarships: [{ name: "KGSP Scholarship", deadline: "2026-10-15" }] },
+                sri_lanka: { name: "Sri Lanka", flag: "🇱🇰", states: [], scholarships: [{ name: "Sri Lanka Presidential Merit", deadline: "2026-07-25" }] },
+                syria: { name: "Syria", flag: "🇸🇾", states: [], scholarships: [{ name: "Syrian Reconstruction Aid", deadline: "2026-09-10" }] },
+                taiwan: { name: "Taiwan", flag: "🇹🇼", states: ["Taipei"], scholarships: [{ name: "Taiwan MOE Scholarship", deadline: "2026-05-31" }] },
+                tajikistan: { name: "Tajikistan", flag: "🇹🇯", states: [], scholarships: [{ name: "Tajik Education Fund", deadline: "2026-08-14" }] },
+                thailand: { name: "Thailand", flag: "🇹🇭", states: ["Bangkok"], scholarships: [{ name: "Thai Government Scholarship", deadline: "2026-06-10" }] },
+                timor_leste: { name: "Timor-Leste", flag: "🇹🇱", states: [], scholarships: [{ name: "Timor-Leste Development Grant", deadline: "2026-09-05" }] },
+                turkey: { name: "Turkey", flag: "🇹🇷", states: ["Istanbul"], scholarships: [{ name: "Türkiye Burslari", deadline: "2026-05-25" }] },
+                turkmenistan: { name: "Turkmenistan", flag: "🇹🇲", states: [], scholarships: [{ name: "Turkmen State Scholarship", deadline: "2026-07-30" }] },
+                uae: { name: "UAE", flag: "🇦🇪", states: ["Dubai"], scholarships: [{ name: "UAE Government Grant", deadline: "2026-04-18" }] },
+                uzbekistan: { name: "Uzbekistan", flag: "🇺🇿", states: [], scholarships: [{ name: "Uzbekistan President's Award", deadline: "2026-08-22" }] },
+                vietnam: { name: "Vietnam", flag: "🇻🇳", states: ["Hanoi"], scholarships: [{ name: "Vietnam Government Scholarship", deadline: "2026-06-28" }] },
+                yemen: { name: "Yemen", flag: "🇾🇪", states: [], scholarships: [{ name: "Yemen Humanitarian Grant", deadline: "2026-10-01" }] }
+            }},
+            europe: { name: "Europe", countries: {
+                albania: { name: "Albania", flag: "🇦🇱", states: [], scholarships: [{ name: "Albanian Excellence Fund", deadline: "2026-06-15" }] },
+                austria: { name: "Austria", flag: "🇦🇹", states: ["Vienna"], scholarships: [{ name: "Ernst Mach Grant", deadline: "2026-05-20" }] },
+                belarus: { name: "Belarus", flag: "🇧🇾", states: [], scholarships: [{ name: "Belarus State Scholarship", deadline: "2026-06-10" }] },
+                belgium: { name: "Belgium", flag: "🇧🇪", states: ["Brussels"], scholarships: [{ name: "ARES Scholarships", deadline: "2026-04-30" }] },
+                bulgaria: { name: "Bulgaria", flag: "🇧🇬", states: [], scholarships: [{ name: "Bulgarian Government Grant", deadline: "2026-07-05" }] },
+                croatia: { name: "Croatia", flag: "🇭🇷", states: [], scholarships: [{ name: "Croatian Science Fund", deadline: "2026-06-22" }] },
+                czech: { name: "Czech Republic", flag: "🇨🇿", states: ["Prague"], scholarships: [{ name: "Czech Government Scholarship", deadline: "2026-05-15" }] },
+                denmark: { name: "Denmark", flag: "🇩🇰", states: ["Copenhagen"], scholarships: [{ name: "Danish State Scholarship", deadline: "2026-04-25" }] },
+                estonia: { name: "Estonia", flag: "🇪🇪", states: [], scholarships: [{ name: "Estonian National Scholarship", deadline: "2026-06-01" }] },
+                finland: { name: "Finland", flag: "🇫🇮", states: ["Helsinki"], scholarships: [{ name: "Finland Government Grant", deadline: "2026-05-30" }] },
+                france: { name: "France", flag: "🇫🇷", states: ["Île-de-France", "Provence"], scholarships: [{ name: "Eiffel Excellence", deadline: "2026-01-10" }, { name: "French Embassy Grant", deadline: "2026-04-15" }] },
+                germany: { name: "Germany", flag: "🇩🇪", states: ["Bavaria", "Berlin"], scholarships: [{ name: "DAAD Scholarship", deadline: "2026-06-15" }, { name: "Heinrich Böll", deadline: "2026-04-01" }] },
+                greece: { name: "Greece", flag: "🇬🇷", states: ["Attica"], scholarships: [{ name: "Greek State Scholarship", deadline: "2026-07-10" }] },
+                hungary: { name: "Hungary", flag: "🇭🇺", states: ["Budapest"], scholarships: [{ name: "Stipendium Hungaricum", deadline: "2026-05-15" }] },
+                iceland: { name: "Iceland", flag: "🇮🇸", states: [], scholarships: [{ name: "Icelandic Research Fund", deadline: "2026-08-01" }] },
+                ireland: { name: "Ireland", flag: "🇮🇪", states: ["Dublin"], scholarships: [{ name: "Government of Ireland Scholarship", deadline: "2026-05-25" }] },
+                italy: { name: "Italy", flag: "🇮🇹", states: ["Lombardy"], scholarships: [{ name: "Italian Government Grant", deadline: "2026-06-05" }] },
+                latvia: { name: "Latvia", flag: "🇱🇻", states: [], scholarships: [{ name: "Latvian State Scholarship", deadline: "2026-06-20" }] },
+                lithuania: { name: "Lithuania", flag: "🇱🇹", states: [], scholarships: [{ name: "Lithuanian Scholarship", deadline: "2026-05-28" }] },
+                luxembourg: { name: "Luxembourg", flag: "🇱🇺", states: [], scholarships: [{ name: "Luxembourg Excellence", deadline: "2026-07-09" }] },
+                malta: { name: "Malta", flag: "🇲🇹", states: [], scholarships: [{ name: "Malta Higher Education Grant", deadline: "2026-06-12" }] },
+                netherlands: { name: "Netherlands", flag: "🇳🇱", states: ["North Holland"], scholarships: [{ name: "Orange Tulip Scholarship", deadline: "2026-05-01" }] },
+                norway: { name: "Norway", flag: "🇳🇴", states: ["Oslo"], scholarships: [{ name: "Norwegian Quota Scheme", deadline: "2026-04-20" }] },
+                poland: { name: "Poland", flag: "🇵🇱", states: ["Warsaw"], scholarships: [{ name: "Polish Government Scholarship", deadline: "2026-06-10" }] },
+                portugal: { name: "Portugal", flag: "🇵🇹", states: ["Lisbon"], scholarships: [{ name: "Portuguese Grant", deadline: "2026-05-15" }] },
+                romania: { name: "Romania", flag: "🇷🇴", states: ["Bucharest"], scholarships: [{ name: "Romanian Government Scholarship", deadline: "2026-07-01" }] },
+                russia: { name: "Russia", flag: "🇷🇺", states: ["Moscow"], scholarships: [{ name: "Open Doors Scholarship", deadline: "2026-06-20" }] },
+                serbia: { name: "Serbia", flag: "🇷🇸", states: ["Belgrade"], scholarships: [{ name: "Serbian Scholarship", deadline: "2026-07-12" }] },
+                slovakia: { name: "Slovakia", flag: "🇸🇰", states: [], scholarships: [{ name: "Slovak National Scholarship", deadline: "2026-05-25" }] },
+                slovenia: { name: "Slovenia", flag: "🇸🇮", states: [], scholarships: [{ name: "Slovenian Government Grant", deadline: "2026-06-05" }] },
+                spain: { name: "Spain", flag: "🇪🇸", states: ["Madrid"], scholarships: [{ name: "Spanish MAEC-AECID", deadline: "2026-04-28" }] },
+                sweden: { name: "Sweden", flag: "🇸🇪", states: ["Stockholm"], scholarships: [{ name: "Swedish Institute Scholarship", deadline: "2026-05-20" }] },
+                switzerland: { name: "Switzerland", flag: "🇨🇭", states: ["Zurich"], scholarships: [{ name: "Swiss Government Excellence", deadline: "2026-06-01" }] },
+                ukraine: { name: "Ukraine", flag: "🇺🇦", states: ["Kyiv"], scholarships: [{ name: "Ukraine Global Grant", deadline: "2026-07-15" }] },
+                united_kingdom: { name: "United Kingdom", flag: "🇬🇧", states: ["England", "Scotland"], scholarships: [{ name: "Chevening", deadline: "2026-11-05" }, { name: "Commonwealth Scholarship", deadline: "2026-10-20" }] }
+            }},
+            north_america: { name: "North America", countries: {
+                canada: { name: "Canada", flag: "🇨🇦", states: ["Ontario", "British Columbia"], scholarships: [{ name: "Vanier Canada", deadline: "2026-09-30" }, { name: "Lester B. Pearson", deadline: "2026-11-15" }] },
+                costa_rica: { name: "Costa Rica", flag: "🇨🇷", states: [], scholarships: [{ name: "Costa Rica Scholarship", deadline: "2026-07-10" }] },
+                cuba: { name: "Cuba", flag: "🇨🇺", states: [], scholarships: [{ name: "Cuban Government Grant", deadline: "2026-06-25" }] },
+                dominican_republic: { name: "Dominican Republic", flag: "🇩🇴", states: [], scholarships: [{ name: "Dominican Excellence", deadline: "2026-05-30" }] },
+                el_salvador: { name: "El Salvador", flag: "🇸🇻", states: [], scholarships: [{ name: "Salvadoran Merit Grant", deadline: "2026-07-18" }] },
+                guatemala: { name: "Guatemala", flag: "🇬🇹", states: [], scholarships: [{ name: "Guatemala Higher Education", deadline: "2026-06-09" }] },
+                haiti: { name: "Haiti", flag: "🇭🇹", states: [], scholarships: [{ name: "Haitian Education Fund", deadline: "2026-08-20" }] },
+                honduras: { name: "Honduras", flag: "🇭🇳", states: [], scholarships: [{ name: "Honduras Grant", deadline: "2026-07-05" }] },
+                jamaica: { name: "Jamaica", flag: "🇯🇲", states: [], scholarships: [{ name: "Jamaica Government Scholarship", deadline: "2026-06-14" }] },
+                mexico: { name: "Mexico", flag: "🇲🇽", states: ["Mexico City"], scholarships: [{ name: "CONACYT Scholarship", deadline: "2026-05-22" }] },
+                nicaragua: { name: "Nicaragua", flag: "🇳🇮", states: [], scholarships: [{ name: "Nicaragua Merit Grant", deadline: "2026-08-01" }] },
+                panama: { name: "Panama", flag: "🇵🇦", states: [], scholarships: [{ name: "Panama Excellence Fund", deadline: "2026-07-19" }] },
+                trinidad_tobago: { name: "Trinidad & Tobago", flag: "🇹🇹", states: [], scholarships: [{ name: "TT Government Scholarship", deadline: "2026-06-18" }] },
+                usa: { name: "United States", flag: "🇺🇸", states: ["California", "New York", "Texas"], scholarships: [{ name: "Fulbright Foreign Student", deadline: "2026-10-15" }, { name: "Hubert H. Humphrey", deadline: "2026-06-01" }] }
+            }},
+            south_america: { name: "South America", countries: {
+                argentina: { name: "Argentina", flag: "🇦🇷", states: ["Buenos Aires"], scholarships: [{ name: "Becas Argentinas", deadline: "2026-05-25" }] },
+                bolivia: { name: "Bolivia", flag: "🇧🇴", states: [], scholarships: [{ name: "Bolivia Scholarship Fund", deadline: "2026-07-11" }] },
+                brazil: { name: "Brazil", flag: "🇧🇷", states: ["São Paulo"], scholarships: [{ name: "CNPq Scholarship", deadline: "2026-07-10" }] },
+                chile: { name: "Chile", flag: "🇨🇱", states: ["Santiago"], scholarships: [{ name: "Becas Chile", deadline: "2026-06-20" }] },
+                colombia: { name: "Colombia", flag: "🇨🇴", states: ["Bogotá"], scholarships: [{ name: "Colombia Government Grant", deadline: "2026-05-18" }] },
+                ecuador: { name: "Ecuador", flag: "🇪🇨", states: [], scholarships: [{ name: "Ecuador Excellence Grant", deadline: "2026-08-01" }] },
+                paraguay: { name: "Paraguay", flag: "🇵🇾", states: [], scholarships: [{ name: "Paraguay National Scholarship", deadline: "2026-06-09" }] },
+                peru: { name: "Peru", flag: "🇵🇪", states: ["Lima"], scholarships: [{ name: "Pronabec Scholarship", deadline: "2026-05-30" }] },
+                uruguay: { name: "Uruguay", flag: "🇺🇾", states: [], scholarships: [{ name: "Uruguay Academic Fund", deadline: "2026-07-04" }] },
+                venezuela: { name: "Venezuela", flag: "🇻🇪", states: [], scholarships: [{ name: "Venezuela Study Grant", deadline: "2026-09-12" }] }
+            }},
+            africa: { name: "Africa", countries: {
+                algeria: { name: "Algeria", flag: "🇩🇿", states: [], scholarships: [{ name: "Algerian Government Grant", deadline: "2026-06-15" }] },
+                angola: { name: "Angola", flag: "🇦🇴", states: [], scholarships: [{ name: "Angola Merit Scholarship", deadline: "2026-07-20" }] },
+                benin: { name: "Benin", flag: "🇧🇯", states: [], scholarships: [{ name: "Benin Excellence Fund", deadline: "2026-08-01" }] },
+                botswana: { name: "Botswana", flag: "🇧🇼", states: [], scholarships: [{ name: "Botswana Government Scholarship", deadline: "2026-05-25" }] },
+                burkina_faso: { name: "Burkina Faso", flag: "🇧🇫", states: [], scholarships: [{ name: "Burkina Higher Education", deadline: "2026-07-12" }] },
+                burundi: { name: "Burundi", flag: "🇧🇮", states: [], scholarships: [{ name: "Burundi Grant", deadline: "2026-08-22" }] },
+                cameroon: { name: "Cameroon", flag: "🇨🇲", states: [], scholarships: [{ name: "Cameroon National Scholarship", deadline: "2026-06-18" }] },
+                cape_verde: { name: "Cape Verde", flag: "🇨🇻", states: [], scholarships: [{ name: "Cape Verde Education Aid", deadline: "2026-07-30" }] },
+                chad: { name: "Chad", flag: "🇹🇩", states: [], scholarships: [{ name: "Chad Merit Fund", deadline: "2026-08-14" }] },
+                comoros: { name: "Comoros", flag: "🇰🇲", states: [], scholarships: [{ name: "Comoros Grant", deadline: "2026-07-08" }] },
+                congo: { name: "Congo", flag: "🇨🇬", states: [], scholarships: [{ name: "Congo Government Grant", deadline: "2026-06-28" }] },
+                drc: { name: "DR Congo", flag: "🇨🇩", states: [], scholarships: [{ name: "DRC Excellence Fund", deadline: "2026-08-10" }] },
+                djibouti: { name: "Djibouti", flag: "🇩🇯", states: [], scholarships: [{ name: "Djibouti Education Grant", deadline: "2026-07-17" }] },
+                egypt: { name: "Egypt", flag: "🇪🇬", states: ["Cairo"], scholarships: [{ name: "Fulbright Egypt", deadline: "2026-05-10" }] },
+                equatorial_guinea: { name: "Equatorial Guinea", flag: "🇬🇶", states: [], scholarships: [{ name: "EG Scholarship", deadline: "2026-08-05" }] },
+                eritrea: { name: "Eritrea", flag: "🇪🇷", states: [], scholarships: [{ name: "Eritrea Grant", deadline: "2026-09-01" }] },
+                eswatini: { name: "Eswatini", flag: "🇸🇿", states: [], scholarships: [{ name: "Eswatini Merit", deadline: "2026-07-25" }] },
+                ethiopia: { name: "Ethiopia", flag: "🇪🇹", states: [], scholarships: [{ name: "Ethiopian Scholarship", deadline: "2026-06-14" }] },
+                gabon: { name: "Gabon", flag: "🇬🇦", states: [], scholarships: [{ name: "Gabon Excellence", deadline: "2026-08-20" }] },
+                gambia: { name: "Gambia", flag: "🇬🇲", states: [], scholarships: [{ name: "Gambia Education Fund", deadline: "2026-07-02" }] },
+                ghana: { name: "Ghana", flag: "🇬🇭", states: ["Greater Accra"], scholarships: [{ name: "Ghana Government Scholarship", deadline: "2026-05-30" }] },
+                guinea: { name: "Guinea", flag: "🇬🇳", states: [], scholarships: [{ name: "Guinea Grant", deadline: "2026-08-09" }] },
+                kenya: { name: "Kenya", flag: "🇰🇪", states: ["Nairobi"], scholarships: [{ name: "Kenya Universities Fund", deadline: "2026-06-22" }] },
+                lesotho: { name: "Lesotho", flag: "🇱🇸", states: [], scholarships: [{ name: "Lesotho Merit Scholarship", deadline: "2026-07-19" }] },
+                liberia: { name: "Liberia", flag: "🇱🇷", states: [], scholarships: [{ name: "Liberia Education Aid", deadline: "2026-08-30" }] },
+                libya: { name: "Libya", flag: "🇱🇾", states: [], scholarships: [{ name: "Libyan Government Grant", deadline: "2026-09-10" }] },
+                madagascar: { name: "Madagascar", flag: "🇲🇬", states: [], scholarships: [{ name: "Madagascar Excellence", deadline: "2026-07-07" }] },
+                malawi: { name: "Malawi", flag: "🇲🇼", states: [], scholarships: [{ name: "Malawi Scholarship", deadline: "2026-08-12" }] },
+                mali: { name: "Mali", flag: "🇲🇱", states: [], scholarships: [{ name: "Mali Higher Education Fund", deadline: "2026-06-27" }] },
+                mauritania: { name: "Mauritania", flag: "🇲🇷", states: [], scholarships: [{ name: "Mauritania Grant", deadline: "2026-07-21" }] },
+                mauritius: { name: "Mauritius", flag: "🇲🇺", states: [], scholarships: [{ name: "Mauritius Government Scholarship", deadline: "2026-05-18" }] },
+                morocco: { name: "Morocco", flag: "🇲🇦", states: ["Casablanca"], scholarships: [{ name: "Moroccan Excellence Grant", deadline: "2026-06-10" }] },
+                mozambique: { name: "Mozambique", flag: "🇲🇿", states: [], scholarships: [{ name: "Mozambique Fund", deadline: "2026-08-01" }] },
+                namibia: { name: "Namibia", flag: "🇳🇦", states: [], scholarships: [{ name: "Namibia Scholarship", deadline: "2026-07-15" }] },
+                niger: { name: "Niger", flag: "🇳🇪", states: [], scholarships: [{ name: "Niger Education Grant", deadline: "2026-09-04" }] },
+                nigeria: { name: "Nigeria", flag: "🇳🇬", states: ["Lagos", "Abuja"], scholarships: [{ name: "PTDF Scholarship", deadline: "2026-05-25" }] },
+                rwanda: { name: "Rwanda", flag: "🇷🇼", states: [], scholarships: [{ name: "Rwanda Government Grant", deadline: "2026-06-30" }] },
+                senegal: { name: "Senegal", flag: "🇸🇳", states: [], scholarships: [{ name: "Senegal Merit Fund", deadline: "2026-07-11" }] },
+                seychelles: { name: "Seychelles", flag: "🇸🇨", states: [], scholarships: [{ name: "Seychelles Excellence", deadline: "2026-09-20" }] },
+                sierra_leone: { name: "Sierra Leone", flag: "🇸🇱", states: [], scholarships: [{ name: "Sierra Leone Grant", deadline: "2026-08-25" }] },
+                somalia: { name: "Somalia", flag: "🇸🇴", states: [], scholarships: [{ name: "Somalia Education Aid", deadline: "2026-09-12" }] },
+                south_africa: { name: "South Africa", flag: "🇿🇦", states: ["Gauteng"], scholarships: [{ name: "Mastercard Foundation Scholars", deadline: "2026-09-01" }] },
+                sudan: { name: "Sudan", flag: "🇸🇩", states: [], scholarships: [{ name: "Sudan Scholarship", deadline: "2026-07-28" }] },
+                tanzania: { name: "Tanzania", flag: "🇹🇿", states: [], scholarships: [{ name: "Tanzania Government Grant", deadline: "2026-06-15" }] },
+                togo: { name: "Togo", flag: "🇹🇬", states: [], scholarships: [{ name: "Togo Excellence", deadline: "2026-08-08" }] },
+                tunisia: { name: "Tunisia", flag: "🇹🇳", states: [], scholarships: [{ name: "Tunisian Scholarship", deadline: "2026-05-20" }] },
+                uganda: { name: "Uganda", flag: "🇺🇬", states: [], scholarships: [{ name: "Uganda Higher Education Fund", deadline: "2026-07-14" }] },
+                zambia: { name: "Zambia", flag: "🇿🇲", states: [], scholarships: [{ name: "Zambia Government Grant", deadline: "2026-08-22" }] },
+                zimbabwe: { name: "Zimbabwe", flag: "🇿🇼", states: [], scholarships: [{ name: "Zimbabwe Merit Scholarship", deadline: "2026-06-19" }] }
+            }},
+            oceania: { name: "Oceania", countries: {
+                australia: { name: "Australia", flag: "🇦🇺", states: ["New South Wales", "Victoria"], scholarships: [{ name: "Australia Awards", deadline: "2026-04-30" }, { name: "RTP Scholarship", deadline: "2026-10-10" }] },
+                fiji: { name: "Fiji", flag: "🇫🇯", states: [], scholarships: [{ name: "Fiji Government Grant", deadline: "2026-07-01" }] },
+                kiribati: { name: "Kiribati", flag: "🇰🇮", states: [], scholarships: [{ name: "Kiribati Education Fund", deadline: "2026-08-15" }] },
+                marshall_islands: { name: "Marshall Islands", flag: "🇲🇭", states: [], scholarships: [{ name: "RMI Scholarship", deadline: "2026-09-01" }] },
+                micronesia: { name: "Micronesia", flag: "🇫🇲", states: [], scholarships: [{ name: "FSM Grant", deadline: "2026-07-20" }] },
+                nauru: { name: "Nauru", flag: "🇳🇷", states: [], scholarships: [{ name: "Nauru Merit Fund", deadline: "2026-08-30" }] },
+                new_zealand: { name: "New Zealand", flag: "🇳🇿", states: ["Auckland"], scholarships: [{ name: "New Zealand Excellence Awards", deadline: "2026-05-15" }] },
+                palau: { name: "Palau", flag: "🇵🇼", states: [], scholarships: [{ name: "Palau Higher Education", deadline: "2026-07-10" }] },
+                papua_new_guinea: { name: "Papua New Guinea", flag: "🇵🇬", states: [], scholarships: [{ name: "PNG Government Grant", deadline: "2026-06-25" }] },
+                samoa: { name: "Samoa", flag: "🇼🇸", states: [], scholarships: [{ name: "Samoa Excellence", deadline: "2026-08-05" }] },
+                solomon_islands: { name: "Solomon Islands", flag: "🇸🇧", states: [], scholarships: [{ name: "SIG Scholarship", deadline: "2026-07-28" }] },
+                tonga: { name: "Tonga", flag: "🇹🇴", states: [], scholarships: [{ name: "Tonga Education Fund", deadline: "2026-09-08" }] },
+                tuvalu: { name: "Tuvalu", flag: "🇹🇻", states: [], scholarships: [{ name: "Tuvalu Grant", deadline: "2026-08-18" }] },
+                vanuatu: { name: "Vanuatu", flag: "🇻🇺", states: [], scholarships: [{ name: "Vanuatu Merit", deadline: "2026-07-22" }] }
+            }}
+        };
+
+        // DOM elements
+        const continentSel = document.getElementById('embed-continent');
+        const countrySel = document.getElementById('embed-country');
+        const stateSel = document.getElementById('embed-state');
+        const exploreBtn = document.getElementById('embed-explore');
+        const searchInput = document.getElementById('embed-search');
+        const searchBtn = document.getElementById('embed-search-btn');
+        const resultsDiv = document.getElementById('embed-results');
+        const toastDiv = document.getElementById('embed-toast');
+
+        let currentCont = "", currentCountry = "", currentState = "", currentQuery = "";
+
+        function showToast(msg) { toastDiv.textContent = msg; toastDiv.style.opacity = "1"; setTimeout(() => toastDiv.style.opacity = "0", 2000); }
+        function deadlineStatus(d) {
+            if (!d) return { text: "Open", class: "" };
+            const today = new Date(); today.setHours(0,0,0,0);
+            const deadline = new Date(d);
+            if (isNaN(deadline)) return { text: "TBD", class: "" };
+            const diff = Math.ceil((deadline - today) / (1000*3600*24));
+            if (diff < 0) return { text: "Expired", class: "deadline-expired" };
+            if (diff <= 7) return { text: `Closes in ${diff}d`, class: "deadline-urgent" };
+            return { text: `${diff} days left`, class: "" };
+        }
+
+        function populateContinents() {
+            continentSel.innerHTML = '<option value="">— Choose Continent —</option>';
+            for (let [key, val] of Object.entries(WORLD_DATA)) {
+                let opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = val.name;
+                continentSel.appendChild(opt);
+            }
+        }
+
+        function updateCountries() {
+            currentCont = continentSel.value;
+            countrySel.innerHTML = '<option value="">— Select Country —</option>';
+            stateSel.innerHTML = '<option value="">— Select State —</option>';
+            stateSel.disabled = true;
+            if (!currentCont || !WORLD_DATA[currentCont]) { countrySel.disabled = true; return; }
+            countrySel.disabled = false;
+            let countries = WORLD_DATA[currentCont].countries;
+            for (let [code, data] of Object.entries(countries)) {
+                let opt = document.createElement('option');
+                opt.value = code;
+                opt.textContent = `${data.flag} ${data.name}`;
+                countrySel.appendChild(opt);
+            }
+        }
+
+        function updateStates() {
+            currentCountry = countrySel.value;
+            stateSel.innerHTML = '<option value="">— Choose Region —</option>';
+            if (!currentCont || !currentCountry) { stateSel.disabled = true; return; }
+            let country = WORLD_DATA[currentCont].countries[currentCountry];
+            if (!country || !country.states || country.states.length === 0) { stateSel.disabled = true; stateSel.innerHTML = '<option value="">— No states —</option>'; return; }
+            stateSel.disabled = false;
+            country.states.forEach(st => { let opt = document.createElement('option'); opt.value = st; opt.textContent = st; stateSel.appendChild(opt); });
+        }
+
+        function showSkeleton() { resultsDiv.innerHTML = `<div class="skeleton-grid">${Array(3).fill('<div class="skeleton-card"></div>').join('')}</div>`; }
+
+        function renderScholarships() {
+            showSkeleton();
+            setTimeout(() => {
+                if (!currentCont || !currentCountry) { resultsDiv.innerHTML = `<div class="empty-state">🌐 Please select continent and country first.</div>`; return; }
+                let countryData = WORLD_DATA[currentCont].countries[currentCountry];
+                if (!countryData) { resultsDiv.innerHTML = `<div class="empty-state">⚠️ Data not found.</div>`; return; }
+                let scholarships = [...(countryData.scholarships || [])];
+                if (currentQuery.trim()) {
+                    let q = currentQuery.trim().toLowerCase();
+                    scholarships = scholarships.filter(s => s.name.toLowerCase().includes(q));
+                }
+                if (scholarships.length === 0) { resultsDiv.innerHTML = `<div class="empty-state">🔍 No matching scholarships.</div>`; return; }
+                let html = `<div class="scholarship-grid">`;
+                for (let s of scholarships) {
+                    let status = deadlineStatus(s.deadline);
+                    html += `<div class="scholarship-card">
+                                <div class="card-header-row">
+                                    <span class="scholarship-name">📘 ${escapeHtml(s.name)}</span>
+                                    <span class="deadline-badge ${status.class}">⏳ ${status.text}</span>
+                                </div>
+                                <div class="location-text">📍 ${countryData.flag} ${countryData.name} ${currentState ? ` · ${currentState}` : ''}</div>
+                                <div class="card-actions">
+                                    <button class="share-card-btn" data-name="${escapeHtml(s.name)}" data-country="${escapeHtml(countryData.name)}" data-flag="${countryData.flag}" data-deadline="${s.deadline || ''}">🔗 Share</button>
+                                    <button class="link-card-btn" onclick="window.open('#', '_blank')">🌐 Info</button>
+                                </div>
+                            </div>`;
+                }
+                html += `</div>`;
+                resultsDiv.innerHTML = html;
+                document.querySelectorAll('.share-card-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        let name = btn.dataset.name, ctry = btn.dataset.country, flag = btn.dataset.flag, dl = btn.dataset.deadline;
+                        let text = `🏆 ${name}\n📍 ${flag} ${ctry}\n⏰ Deadline: ${dl || 'flexible'}\n🔗 ${window.location.href}`;
+                        navigator.clipboard.writeText(text).then(() => showToast("Copied!")).catch(() => alert("Copy manually"));
+                    });
+                });
+            }, 300);
+        }
+
+        function escapeHtml(str) { return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
+        function performExplore() {
+            currentCont = continentSel.value;
+            currentCountry = countrySel.value;
+            currentState = stateSel.disabled ? "" : stateSel.value;
+            if (!currentCont || !currentCountry) { resultsDiv.innerHTML = `<div class="empty-state">⚠️ Select continent & country first.</div>`; return; }
+            currentQuery = searchInput.value.trim();
+            renderScholarships();
+        }
+        function searchTrigger() { if (currentCont && currentCountry) { currentQuery = searchInput.value.trim(); renderScholarships(); } else { resultsDiv.innerHTML = `<div class="empty-state">🔍 First select continent and country.</div>`; } }
+
+        continentSel.addEventListener('change', updateCountries);
+        countrySel.addEventListener('change', updateStates);
+        exploreBtn.addEventListener('click', performExplore);
+        searchBtn.addEventListener('click', searchTrigger);
+        searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') searchTrigger(); });
+        populateContinents();
+        resultsDiv.innerHTML = `<div class="empty-state">🌍 Select continent, country and click Explore →</div>`;
+    })();
+</script>
+<!-- ========== END: GLOBAL SCHOLARSHIP CARD ========== -->
 <div class="container">
 
     <div class="ad-space"><script>
