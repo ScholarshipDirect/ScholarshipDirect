@@ -1,68 +1,317 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta name="google-adsense-account" content="ca-pub-8379217622677394">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8379217622677394"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हमारे बारे में | ScholarshipDirect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="About ScholarshipDirect – Our mission, transparency, and the upcoming Global Scholarship Finder with 10,000+ international opportunities across 190+ countries.">
+    <meta name="robots" content="index, follow">
+    <title>About Us | ScholarshipDirect – Global Scholarship Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f8f9fa; color: #333; line-height: 1.8; }
-        nav { background: #004085; padding: 15px; text-align: center; }
-        nav a { color: white; text-decoration: none; font-weight: bold; border: 1px solid white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; }
-        
-        .about-container { max-width: 850px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { color: #004085; margin-bottom: 25px; border-bottom: 4px solid #ffc107; display: inline-block; padding-bottom: 5px; }
-        p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
-        .highlight { color: #0056b3; font-weight: 600; }
-        
-        .mission-box { background: #f0f7ff; border-left: 6px solid #0056b3; padding: 20px; margin: 30px 0; border-radius: 0 10px 10px 0; }
-        .contact-section { background: #343a40; color: white; padding: 30px; border-radius: 15px; margin-top: 40px; }
-        .contact-section h3 { color: #ffc107; margin-bottom: 15px; }
-        
-        footer { text-align: center; margin-top: 50px; padding: 20px; color: #777; font-size: 0.9rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f5f9ff;
+            color: #1e2a3e;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: linear-gradient(98deg, #002856 0%, #004a99 100%);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+        .main-nav a:hover {
+            background: #ffb347;
+            color: #002856;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .about-container {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        .about-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.12);
+        }
+
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(125deg, #022b49, #0052a0);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        .hero-section h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.92;
+        }
+
+        /* GLOBAL BIG UPDATE BOX */
+        .global-alert {
+            background: linear-gradient(115deg, #fff6e8, #ffe0b5);
+            margin: 2rem 2rem 0.5rem 2rem;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            border-left: 8px solid #f39c12;
+            text-align: center;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.05);
+        }
+        .global-badge {
+            background: #f39c12;
+            display: inline-block;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+        .global-alert h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #b45f06;
+            margin-bottom: 0.8rem;
+        }
+        .global-alert p {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: #2d3e2b;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            margin: 1.2rem 0;
+        }
+        .stat-chip {
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            color: #004a99;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .stat-chip span {
+            font-size: 1.3rem;
+            margin-right: 6px;
+        }
+        .btn-reminder {
+            display: inline-block;
+            background: #f39c12;
+            color: #1e2a3e;
+            font-weight: 700;
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 0.8rem;
+            transition: 0.2s;
+        }
+        .btn-reminder:hover {
+            background: #e67e22;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* Content area */
+        .content-inner {
+            padding: 2rem 2rem 2rem 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #004a99;
+            margin: 1.8rem 0 1rem 0;
+            font-weight: 700;
+            border-left: 5px solid #ffb347;
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #1f4e79;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2c3e50;
+        }
+        .mission-highlight {
+            background: #ecf5ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight {
+            font-weight: 700;
+            color: #e67e22;
+        }
+        .contact-block {
+            background: #1e2f3f;
+            border-radius: 28px;
+            padding: 2rem;
+            margin: 2rem 0 1rem;
+            color: white;
+        }
+        .contact-block h3 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+        .contact-block p {
+            color: #e9ecef;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .footer-links a {
+            color: #1f4e79;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+        }
+        .footer-links a:hover {
+            border-bottom-color: #ffb347;
+        }
+        footer {
+            text-align: center;
+            background: #eef2f8;
+            padding: 2rem;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: #4a627a;
+        }
+        @media (max-width: 700px) {
+            .global-alert h2 { font-size: 1.4rem; }
+            .hero-section h1 { font-size: 1.9rem; }
+            .content-inner { padding: 1.5rem; }
+            .global-alert { margin: 1rem; padding: 1.2rem; }
+        }
+        .small-note {
+            font-size: 0.85rem;
+            background: #f8f4ea;
+            padding: 1rem;
+            border-radius: 20px;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">← मुख्य पृष्ठ (Home) पर वापस जाएं</a>
-    </nav>
+    <div class="main-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">📖 About Us</a>
+        <a href="contact.html">📞 Contact</a>
+        <a href="privacypolicy.html">🔒 Privacy Policy</a>
+        <a href="disclaimer.html">⚠️ Disclaimer</a>
+    </div>
 
     <div class="about-container">
-        <h1>हमारे बारे में (About Us)</h1>
-        
-        <p>नमस्ते! <span class="highlight">ScholarshipDirect</span> पर आपका स्वागत है। हमारा उद्देश्य भारत के हर विद्यार्थी तक सही और आधिकारिक (Official) स्कॉलरशिप की जानकारी आसान भाषा में पहुँचाना है।</p>
-        
-        <div class="mission-box">
-            <p><strong>हमारा लक्ष्य:</strong> अक्सर इंटरनेट पर बहुत सारी फर्जी वेबसाइट्स होती हैं जो छात्रों को भ्रमित करती हैं। हमने इस पोर्टल को इसलिए बनाया है ताकि आपको सभी 20+ राज्यों की सरकारी वेबसाइट्स की <span class="highlight">डायरेक्ट लिंक</span> एक ही जगह मिल सकें।</p>
-        </div>
+        <div class="about-card">
+            <div class="hero-section">
+                <h1>✨ ScholarshipDirect ✨</h1>
+                <p>India's most trusted scholarship information hub — now going global.</p>
+            </div>
 
-        <p>हमारा मानना है कि शिक्षा हर किसी का अधिकार है और पैसों की कमी इसमें बाधा नहीं बननी चाहिए। इसीलिए हम समय-समय पर उत्तर प्रदेश, बिहार, मध्य प्रदेश और अन्य राज्यों के पोर्टल अपडेट करते रहते हैं ताकि आप बिना किसी देरी के अपना स्टेटस चेक कर सकें और आवेदन कर सकें।</p>
+            <!-- BIG GLOBAL SCHOLARSHIP ANNOUNCEMENT (ENGLISH) -->
+            <div class="global-alert">
+                <div class="global-badge">🚀 BIG UPDATE: GLOBAL EXPANSION</div>
+                <h2>🌍 The Global Scholarship Finder is launching soon!</h2>
+                <p><strong>Get ready to explore 10,000+ international opportunities across 190+ countries.</strong> From Fulbright to Chevening, Erasmus to DAAD – we are building a powerful search engine that connects you to scholarships worldwide. <strong>Completely free, transparent, and student-first.</strong></p>
+                <div class="stats-row">
+                    <div class="stat-chip"><span>🌎</span> 190+ countries</div>
+                    <div class="stat-chip"><span>🎓</span> 10,000+ scholarships</div>
+                    <div class="stat-chip"><span>📢</span> Launch: Coming weeks</div>
+                </div>
+                <p>✨ <strong>Stay tuned!</strong> Subscribe to our newsletter or follow for updates — your global education journey starts here. ✨</p>
+                <a href="#" class="btn-reminder">🔔 Notify me when launched</a>
+            </div>
 
-        <p><strong>सुरक्षा और गोपनीयता:</strong> हम आपकी कोई भी निजी जानकारी (जैसे बैंक खाता या आधार नंबर) नहीं मांगते। हमारा काम केवल आपको सही सरकारी पोर्टल तक सुरक्षित पहुँचाना है।</p>
+            <div class="content-inner">
+                <h2>🙏 About ScholarshipDirect</h2>
+                <p><span class="highlight">ScholarshipDirect</span> is an independent, non-governmental information portal dedicated to helping students discover accurate scholarship opportunities. We know how many talented students miss out due to lack of timely, reliable information. Our platform is built on three pillars: <strong>transparency, zero cost, and trust</strong>.</p>
 
-        <div id="contact" class="contact-section">
-            <h3>संपर्क करें (Contact Us)</h3>
-            <p>यदि आपके पास कोई सुझाव है या आप किसी तकनीकी समस्या की रिपोर्ट करना चाहते हैं, तो हमें ईमेल करें:</p>
-            <p><strong>ईमेल:</strong> support@scholarshipdirect.github.io</p>
-            <p><strong>यूट्यूब/टेलीग्राम:</strong>upcoming</p>
+                <div class="mission-highlight">
+                    <p><strong>🎯 Our Mission:</strong> “No deserving student should abandon education due to financial constraints.” We simplify scholarships, fight fraud, and guide you to official sources. We are not just a link directory — we are a student empowerment movement.</p>
+                </div>
+
+                <h2>📌 What We Offer Today & Tomorrow</h2>
+                <p>✔️ Direct links to government scholarships across 20+ Indian states (UP, Bihar, MP, Rajasthan, Tamil Nadu, Maharashtra, etc.)<br>
+                ✔️ National Scholarship Portal (NSP) guides, deadlines, and status check tips<br>
+                ✔️ Private & corporate scholarships (Tata, Reliance, LIC, etc.)<br>
+                ✔️ Fraud alerts: how to spot fake scholarship scams<br>
+                ✔️ <strong>COMING SOON – Global Scholarship Finder:</strong> curated international awards from universities, governments, and foundations worldwide.</p>
+
+                <h2>🔐 Our Commitment (AdSense Ready & Compliant)</h2>
+                <p>ScholarshipDirect follows all Google AdSense policies. We <strong>never charge students any fee</strong>, we do not use misleading ads, and all content is original, helpful, and accurate. We are not affiliated with any government body, but we serve as a reliable bridge to official portals.</p>
+
+                <h2>⚠️ Beware of Fake Scholarships</h2>
+                <p><strong>No genuine scholarship asks for money.</strong> If anyone asks for "processing fee", "security deposit", or "gift card", report immediately. ScholarshipDirect will never ask for your Aadhaar, bank OTP, or sensitive personal data. Stay vigilant.</p>
+
+                <div class="contact-block">
+                    <h3>📬 Contact Us</h3>
+                    <p>Have suggestions, feedback, or found a broken link? We’d love to hear from you. Our team responds within 24-48 hours.</p>
+                    <p><strong>✉️ Email:</strong> support@scholarshipdirect.online <br>
+                    <strong>🌐 Social media:</strong> Launching soon (Telegram, YouTube, Twitter)</p>
+                    <p><em>Let's build a scholarship-aware community together.</em></p>
+                </div>
+
+                <div class="small-note">
+                    📢 <strong>Disclaimer reminder:</strong> ScholarshipDirect is a private informational platform. Always verify official applications on government websites (.gov.in / .nic.in) or the respective institution’s official portal. We are not responsible for any third-party decisions.
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 scholershipdirect.online | विद्यार्थियों के उज्ज्वल भविष्य के लिए समर्पित।
-         <div class="footer-links">
+        <div class="footer-links">
             <a href="index.html">Home</a> | 
             <a href="about.html">About Us</a> | 
             <a href="contact.html">Contact</a> | 
             <a href="privacypolicy.html">Privacy Policy</a> | 
             <a href="disclaimer.html">Disclaimer</a>
         </div>
+        <p>© 2026 ScholarshipDirect.online | Dedicated to students' brighter future. 100% free educational resource.</p>
+        <p style="margin-top: 0.4rem; font-size: 0.75rem;">*Not affiliated with any government agency. Please cross-check official sources.</p>
     </footer>
-
 </body>
 </html>
